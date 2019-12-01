@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block title %}
+From django jinja templating engine with bootstrap
+{% endblock %}
+
+
+{% block content %}
+	<h1>{{blog_info.title}}</h1>
+	<p>{{blog_info.text}}</p>
+{% endblock %}

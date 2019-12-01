@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %}
+From django jinja templating engine with bootstrap
+{% endblock %}
+
+
+{% block content %}
+	<h1>Hello, world!</h1>
+	<a style="margin:20px" class="btn btn-info" href="/blog/post/">New Po</a>
+	{% if blog_list %}
+	<ul>
+		{% for blog in blog_list %}
+		<li>
+			<div class="row" style="margin:10px">
+				<div class="col-md-6">
+					<a href="/blog/item/{{blog.id}}">{{ blog }}</a>
+				</div>
+				<div class="col-md-3">
+					<a href="/blog/edit/{{blog.id}}" class="btn btn-info">Edit</a>
+				</div>
+				<div class="col-md-3">
+					<a href="/blog/delete/{{blog.id}}" class="btn btn-danger">Delete</a>
+				</div>
+			</div>
+		</li>
+		{% endfor %}
+	</ul>
+	{% endif %}
+{% endblock %}
